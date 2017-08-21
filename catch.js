@@ -35,8 +35,8 @@ var Spider = {
         uri: "http://wuxianfuli.cc/pic/?paged=",
         saveTo: 'weheartit',
         element:".entry-content p>img",
-        startPage: 23,
-        endPage: 30,
+        startPage: 1,
+        endPage: 3,
         downLimit:2
     },
     posts: [],
@@ -107,8 +107,8 @@ var Spider = {
      */
     parsePage(page, callback) {
         var $ = node.cheerio.load(page.html);
-        var $imgs = $(self.options.element);
         var self = this;
+        var $imgs = $(self.options.element);
         var src = [];
 
         $imgs.each(function() {
